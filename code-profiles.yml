@@ -1,8 +1,6 @@
-base-profile: base
-
 profiles:
   - name: base
-    extensions:
+    extensions: &base
       - aaron-bond.better-comments
       - shd101wyy.markdown-preview-enhanced
       - MarkosTh09.color-picker
@@ -36,14 +34,19 @@ profiles:
       - VisualStudioExptTeam.intellicode-api-usage-examples
       - ms-vscode.test-adapter-converter
       - ms-vscode.vscode-typescript-next
+      - k--kato.intellij-idea-keybindings
 
   - name: go
     profile-path: ~/.vscode/profiles/go
+    depends-on:
+      - *base
     extensions:
       - golang.go
 
   - name: elixir
     profile-path: "~/.vscode/profiles/elixir"
+    depends-on:
+      - *base
     extensions:
       - EcksDy.env-switcher
       - mikestead.dotenv
@@ -65,6 +68,8 @@ profiles:
 
   - name: jvm
     profile-path: "~/.vscode/profiles/jvm"
+    depends-on:
+      - *base
     extensions:
       - fwcd.kotlin
       - redhat.java
@@ -81,6 +86,8 @@ profiles:
 
   - name: ruby
     profile-path: "~/.vscode/profiles/ruby"
+    depends-on:
+      - *base
     extensions:
       - castwide.ruby-debug
       - rebornix.ruby
@@ -88,6 +95,8 @@ profiles:
 
   - name: python
     profile-path: "~/.vscode/profiles/python"
+    depends-on:
+      - *base
     extensions:
       - ms-python.isort
       - ms-python.python
@@ -97,6 +106,8 @@ profiles:
 
   - name: cpp
     profile-path: "~/.vscode/profiles/cpp"
+    depends-on:
+      - *base
     extensions:
       - twxs.cmake
       - ms-vscode.cpptools
@@ -105,5 +116,7 @@ profiles:
 
   - name: rust
     profile-path: "~/.vscode/profiles/rust"
+    depends-on:
+      - *base
     extensions:
       - rust-lang.rust-analyzer
