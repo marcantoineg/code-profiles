@@ -14,9 +14,10 @@ type config struct {
 	BaseProfile string `yaml:"base-profile"`
 }
 type Profile struct {
-	Name       string   `yaml:"name"`
-	Path       string   `yaml:"profile-path"`
-	Extensions []string `yaml:"extensions,flow"`
+	Name       string     `yaml:"name"`
+	Path       string     `yaml:"profile-path"`
+	Extensions []string   `yaml:"extensions,flow"`
+	DependsOn  [][]string `yaml:"depends-on,flow"`
 }
 
 var _instance *config = nil
@@ -65,10 +66,4 @@ func GetProfileFromFile() (Profile, error) {
 		return Profile{}, err
 	}
 	return GetProfile(string(scanner.Text()))
-
-}
-
-// GetProfile returns the a base profile if specified.
-func BaseProfile() (Profile, error) {
-	return GetProfile(instance().BaseProfile)
 }

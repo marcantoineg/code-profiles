@@ -25,13 +25,7 @@ var (
 			}
 			utils.Check(err)
 
-			base_p, err := config.BaseProfile()
-			base_p.Path = p.Path
-
 			if installFlag {
-				if err == nil {
-					code.InstallExtensions(base_p)
-				}
 				code.InstallExtensions(p)
 			}
 
