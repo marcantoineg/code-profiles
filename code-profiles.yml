@@ -1,0 +1,109 @@
+base-profile: base
+
+profiles:
+  - name: base
+    extensions:
+      - aaron-bond.better-comments
+      - shd101wyy.markdown-preview-enhanced
+      - MarkosTh09.color-picker
+      - abusaidm.html-snippets
+      - eamodio.gitlens
+      - ms-azuretools.vscode-docker
+      - arcticicestudio.nord-visual-studio-code
+      - chekweitan.compare-view
+      - ckolkman.vscode-postgres
+      - codezombiech.gitignore
+      - dracula-theme.theme-dracula
+      - eamodio.gitlens
+      - EditorConfig.EditorConfig
+      - GitHub.github-vscode-theme
+      - GitHub.vscode-pull-request-github
+      - enkia.tokyo-night
+      - hbenl.vscode-test-explorer
+      - IBM.output-colorizer
+      - me-dutour-mathieu.vscode-github-actions
+      - mhutchie.git-graph
+      - PKief.material-icon-theme
+      - redhat.vscode-yaml
+      - ecmel.vscode-html-css
+      - liviuschera.noctis
+      - naumovs.color-highlight
+      - josef.rouge-theme
+      - humao.rest-client
+      - SimonSiefke.svg-preview
+      - ullissescastro.theme-bracketslight
+      - VisualStudioExptTeam.vscodeintellicode
+      - VisualStudioExptTeam.intellicode-api-usage-examples
+      - ms-vscode.test-adapter-converter
+      - ms-vscode.vscode-typescript-next
+
+  - name: go
+    profile-path: ~/.vscode/profiles/go
+    extensions:
+      - golang.go
+
+  - name: elixir
+    profile-path: "~/.vscode/profiles/elixir"
+    extensions:
+      - EcksDy.env-switcher
+      - mikestead.dotenv
+      - Nixon.env-cmd-file-syntax
+      - IronGeek.vscode-env
+      - JakeBecker.elixir-ls
+      - devkir.elixir-syntax-vscode
+      - pantajoe.vscode-elixir-credo
+      - andricdev.vscode-env-selector
+      - saratravi.elixir-formatter
+      - adamzapasnik.elixir-test-explorer
+      - animus-coop.vscode-elixir-mix-formatter
+      - florinpatrascu.vscode-elixir-snippets
+      - maxmellen.elixir-language-support
+      - pgourlain.erlang
+      - phoenixframework.phoenix
+      - ritvyk.heex-html
+      - mrorz.language-gettext
+
+  - name: jvm
+    profile-path: "~/.vscode/profiles/jvm"
+    extensions:
+      - fwcd.kotlin
+      - redhat.java
+      - scala-lang.scala
+      - vscjava.vscode-java-debug
+      - vscjava.vscode-java-pack
+      - vscjava.vscode-java-test
+      - vscjava.vscode-java-dependency
+      - vscjava.vscode-maven
+      - redhat.vscode-commons
+      - redhat.vscode-xml
+      - mathiasfrohlich.Kotlin
+      - lightbend.vscode-sbt-scala
+
+  - name: ruby
+    profile-path: "~/.vscode/profiles/ruby"
+    extensions:
+      - castwide.ruby-debug
+      - rebornix.ruby
+      - wingrunr21.vscode-ruby
+
+  - name: python
+    profile-path: "~/.vscode/profiles/python"
+    extensions:
+      - ms-python.isort
+      - ms-python.python
+      - njpwerner.autodocstring
+      - ms-python.vscode-pylance
+      - tushortz.python-extended-snippets
+
+  - name: cpp
+    profile-path: "~/.vscode/profiles/cpp"
+    extensions:
+      - twxs.cmake
+      - ms-vscode.cpptools
+      - ms-vscode.cmake-tools
+      - ms-vscode.makefile-tools
+
+  - name: rust
+    profile-path: "~/.vscode/profiles/rust"
+    extensions:
+      - rust-lang.rust-analyzer
