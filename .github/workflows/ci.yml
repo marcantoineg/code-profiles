@@ -1,0 +1,30 @@
+name: CI
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+
+  workflow_dispatch:
+
+jobs:
+  ci:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v3
+    
+      - name: Setup Go environment
+        uses: actions/setup-go@v3.5.0
+        with:
+          go-version: 1.18
+
+      - name: Install go mods
+        run: go mod download
+
+      - name: Run go vet
+        run: go vet ./...
+
+      - name: Run go tests
+        run: go test ./... -v
