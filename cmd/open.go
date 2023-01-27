@@ -1,4 +1,5 @@
 package cmd
+// cmd exposes function to interact with the cobra command
 
 import (
 	"code-profiles/code"
@@ -34,6 +35,7 @@ var (
 	}
 )
 
+// Execute runs the main cobra command for cli `code-profiles`.
 func Execute() {
 	var rootCmd = &cobra.Command{Use: "code-profiles"}
 

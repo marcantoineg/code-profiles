@@ -1,4 +1,5 @@
 package config
+// package config exposes functions to fetch Profiles in various ways
 
 import (
 	"bufio"
@@ -41,7 +42,7 @@ func (_ config) init_config() {
 	utils.Check(err)
 }
 
-// GetProfile returns the a profile given its name.
+// GetProfile returns a profile from loaded config given its name.
 func GetProfile(name string) (Profile, error) {
 	for _, p := range instance().Profiles {
 		if p.Name == name {
@@ -51,8 +52,8 @@ func GetProfile(name string) (Profile, error) {
 	return Profile{}, errors.New("no profile with name " + name)
 }
 
-// GetProfileFromFile fetches the project from the '.code-profile' file.
-// '.code-profile' file should only contain the name of the profile.
+// GetProfileFromFile fetches the project from the '.code-profile' file in the current working dir.
+// '.code-profile' file should only contain the name of the profile on the first line.
 func GetProfileFromFile() (Profile, error) {
 	file, err := os.Open(".code-profile")
 	if err != nil {
