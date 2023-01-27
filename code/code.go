@@ -1,4 +1,6 @@
 package code
+// package code is a go interface with VS Code's CLI: `code`.
+// It offers various go functions to execute subcommands using `code`, mainly to manage/install extensions and launch code with `Profiles`  
 
 import (
 	"code-profiles/config"
@@ -7,6 +9,7 @@ import (
 	"os/exec"
 )
 
+// InstallExtensions install all of profile's extensions and dependencies (DependsOn) to the profile's path.
 func InstallExtensions(profile config.Profile) {
 	println("installing extensions for profile '" + profile.Name + "'")
 	cmd_args := []string{".", "--extensions-dir", profile.Path}
@@ -24,6 +27,7 @@ func InstallExtensions(profile config.Profile) {
 	runCmd(cmd_args)
 }
 
+// LaunchCode takes a profile and launch code loading only extensions in the profile's path
 func LaunchCode(profile config.Profile) {
 	println("launching code with profile '" + profile.Name + "'")
 	cmd_args := []string{".", "--extensions-dir", profile.Path}
@@ -31,6 +35,7 @@ func LaunchCode(profile config.Profile) {
 	runCmd(cmd_args)
 }
 
+// getInstallArgs returns an array of command arguments to install extensions in the input array.
 func getInstallArgs(exts []string) []string {
 	var cmd_args = []string{}
 	for _, ext := range exts {
@@ -39,9 +44,9 @@ func getInstallArgs(exts []string) []string {
 	return cmd_args
 }
 
+// runCmd runs `code` cli with the given command arguments and prints it's output once finished.
 func runCmd(cmd_args []string) {
 	cmd := exec.Command("code", cmd_args...)
-	// cmd.Dir = ""
 
 	out, err := cmd.CombinedOutput()
 	fmt.Printf("%s", out)
