@@ -12,6 +12,7 @@ import (
 var (
 	profileName string
 	installFlag bool
+	verboseFlag bool
 
 	openCmd = &cobra.Command{
 		Use:   "open [profile_name]",
@@ -27,10 +28,10 @@ var (
 			utils.Check(err)
 
 			if installFlag {
-				code.InstallExtensions(p)
+				code.InstallExtensions(p, verboseFlag)
 			}
 
-			code.LaunchCode(p)
+			code.LaunchCode(p, verboseFlag)
 		},
 	}
 )
@@ -40,6 +41,7 @@ func Execute() {
 	var rootCmd = &cobra.Command{Use: "code-profiles"}
 
 	openCmd.Flags().BoolVarP(&installFlag, "install", "i", false, "should install extensions before opening vscode")
+	openCmd.Flags().BoolVarP(&verboseFlag, "verbose", "v", false, "prints additional logs")
 
 	rootCmd.AddCommand(openCmd)
 
