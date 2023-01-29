@@ -12,7 +12,6 @@ profiles:
       - ckolkman.vscode-postgres
       - codezombiech.gitignore
       - dracula-theme.theme-dracula
-      - eamodio.gitlens
       - EditorConfig.EditorConfig
       - GitHub.github-vscode-theme
       - GitHub.vscode-pull-request-github
