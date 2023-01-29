@@ -1,6 +1,6 @@
+// Package code is a go interface with VS Code's CLI: `code`.
+// It offers various go functions to execute subcommands using `code`, mainly to manage/install extensions and launch code with `Profiles`
 package code
-// package code is a go interface with VS Code's CLI: `code`.
-// It offers various go functions to execute subcommands using `code`, mainly to manage/install extensions and launch code with `Profiles`  
 
 import (
 	"code-profiles/config"

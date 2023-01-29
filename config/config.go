@@ -1,10 +1,11 @@
+// Package config exposes functions to fetch Profiles in various ways
 package config
-// package config exposes functions to fetch Profiles in various ways
 
 import (
 	"bufio"
 	"code-profiles/utils"
 	"errors"
+	"flag"
 	"os"
 
 	"gopkg.in/yaml.v3"
@@ -25,7 +26,8 @@ var _instance *config = nil
 
 // instance creates and/or gets the current config singleton.
 func instance() *config {
-	if _instance == nil {
+	// always reloads the config from disk if running tests.
+	if _instance == nil || flag.Lookup("test.v") != nil {
 		_instance = &config{}
 		_instance.init_config()
 	}
