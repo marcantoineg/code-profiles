@@ -1,4 +1,3 @@
-// Package cmd exposes function to interact with the cobra command
 package cmd
 
 import (
