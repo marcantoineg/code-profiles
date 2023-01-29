@@ -1,6 +1,5 @@
+// Package config exposes functions to fetch Profiles in various ways
 package config
-
-// package config exposes functions to fetch Profiles in various ways
 
 import (
 	"bufio"
