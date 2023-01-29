@@ -8,9 +8,9 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var openCmd = &cobra.Command{
-	Use:   "open [profile_name]",
-	Short: "open VSCode using a custom profile for extensions",
+var installCmd = &cobra.Command{
+	Use:   "install [profile_name]",
+	Short: "install required VSCode extensions for a given profile",
 	Run: func(cmd *cobra.Command, args []string) {
 		var p config.Profile
 		var err error
@@ -21,10 +21,6 @@ var openCmd = &cobra.Command{
 		}
 		utils.Check(err)
 
-		if installFlag {
-			code.InstallExtensions(p, verboseFlag)
-		}
-
-		code.LaunchCode(p, verboseFlag)
+		code.InstallExtensions(p, verboseFlag)
 	},
 }
