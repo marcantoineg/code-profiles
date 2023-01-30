@@ -1,4 +1,7 @@
 # 🖥 code-profiles 💻
+
+[![CI](https://github.com/marcantoineg/code-profiles/actions/workflows/ci.yml/badge.svg)](https://github.com/marcantoineg/code-profiles/actions/workflows/ci.yml)
+
 Profiles for VS Code Extensions.
 
 I plan to use this to open only the extensions I need in VS Code depending on projects.
