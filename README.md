@@ -1,6 +1,7 @@
 # 🖥 code-profiles 💻
 
 [![CI](https://github.com/marcantoineg/code-profiles/actions/workflows/ci.yml/badge.svg)](https://github.com/marcantoineg/code-profiles/actions/workflows/ci.yml)
+<img height="20px" src="https://img.shields.io/badge/Golang-FFFFFF?logo=go&style=flat">
 
 Profiles for VS Code Extensions.
 
