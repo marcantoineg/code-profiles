@@ -3,6 +3,7 @@ module code-profiles
 go 1.18
 
 require (
+	github.com/marcantoineg/fileutil v0.0.0-20230304185054-f89906007253
 	github.com/spf13/cobra v1.6.1
 	gopkg.in/yaml.v3 v3.0.1
 )

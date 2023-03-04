@@ -12,7 +12,7 @@ import (
 // InstallExtensions install all of profile's extensions and dependencies (DependsOn) to the profile's path.
 func InstallExtensions(profile config.Profile, verbose bool) {
 	println("installing extensions for profile '" + profile.Name + "'")
-	cmd_args := []string{".", "--extensions-dir", profile.Path}
+	cmd_args := []string{".", "--extensions-dir", profile.Path()}
 	cmd_args = append(cmd_args, getInstallArgs(profile.Extensions)...)
 
 	if len(profile.DependsOn) > 0 {
@@ -32,7 +32,7 @@ func InstallExtensions(profile config.Profile, verbose bool) {
 // LaunchCode takes a profile and launch code loading only extensions in the profile's path
 func LaunchCode(profile config.Profile, verbose bool) {
 	println("launching code with profile '" + profile.Name + "'")
-	cmd_args := []string{".", "--extensions-dir", profile.Path}
+	cmd_args := []string{".", "--extensions-dir", profile.Path()}
 
 	runCmd(cmd_args, verbose)
 }

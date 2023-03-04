@@ -5,6 +5,7 @@ import (
 	"code-profiles/config"
 	"code-profiles/utils"
 
+	"github.com/marcantoineg/fileutil"
 	"github.com/spf13/cobra"
 )
 
@@ -12,7 +13,7 @@ var openCmd = &cobra.Command{
 	Use:   "open [profile_name]",
 	Short: "open VSCode using a custom profile for extensions",
 	Run: func(cmd *cobra.Command, args []string) {
-		config.SetConfigPath(configPathFlag)
+		config.SetConfigPath(fileutil.ReplaceTilde(configPathFlag))
 
 		var profileName = ""
 		if len(args) >= 1 {

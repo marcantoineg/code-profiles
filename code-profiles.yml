@@ -7,15 +7,10 @@ profiles:
       - abusaidm.html-snippets
       - eamodio.gitlens
       - ms-azuretools.vscode-docker
-      - arcticicestudio.nord-visual-studio-code
       - chekweitan.compare-view
       - ckolkman.vscode-postgres
       - codezombiech.gitignore
-      - dracula-theme.theme-dracula
       - EditorConfig.EditorConfig
-      - GitHub.github-vscode-theme
-      - GitHub.vscode-pull-request-github
-      - enkia.tokyo-night
       - hbenl.vscode-test-explorer
       - IBM.output-colorizer
       - me-dutour-mathieu.vscode-github-actions
@@ -26,17 +21,14 @@ profiles:
       - liviuschera.noctis
       - naumovs.color-highlight
       - josef.rouge-theme
-      - humao.rest-client
       - SimonSiefke.svg-preview
-      - ullissescastro.theme-bracketslight
       - VisualStudioExptTeam.vscodeintellicode
       - VisualStudioExptTeam.intellicode-api-usage-examples
       - ms-vscode.test-adapter-converter
-      - ms-vscode.vscode-typescript-next
       - k--kato.intellij-idea-keybindings
 
   - name: go
-    profile-path: ~/.vscode/profiles/go
+    profile-path: "~/.vscode/profiles/go"
     depends-on:
       - *base
     extensions:
@@ -47,14 +39,9 @@ profiles:
     depends-on:
       - *base
     extensions:
-      - EcksDy.env-switcher
-      - mikestead.dotenv
-      - Nixon.env-cmd-file-syntax
-      - IronGeek.vscode-env
       - JakeBecker.elixir-ls
       - devkir.elixir-syntax-vscode
       - pantajoe.vscode-elixir-credo
-      - andricdev.vscode-env-selector
       - saratravi.elixir-formatter
       - adamzapasnik.elixir-test-explorer
       - animus-coop.vscode-elixir-mix-formatter
@@ -119,3 +106,8 @@ profiles:
       - *base
     extensions:
       - rust-lang.rust-analyzer
+
+  - name: typescript
+    profile-path: "~/.vscode/profiles/typescript"
+    extensions:
+    - ms-vscode.vscode-typescript-next
