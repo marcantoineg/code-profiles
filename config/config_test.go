@@ -13,16 +13,19 @@ var (
 	baseProfileBody = `
 profiles:
   - name: base
+    profile-path: ./base
     extensions:
       - some.very.real.ext.id
 `
 	multipleProfilesBody = `
 profiles:
   - name: base
+    profile-path: ./base
     extensions:
       - some.very.real.ext.id
 
   - name: base2
+    profile-path: ./base2
     extensions:
       - some.very.real.ext.id
 `
@@ -33,7 +36,7 @@ profiles:
 	extensions:
 `
 
-	testRuns = []struct {
+	sharedTestRuns = []struct {
 		testName           string
 		initialDiskData    string
 		profileNameToFetch string
@@ -47,7 +50,7 @@ profiles:
 			baseProfileBody,
 			"base",
 
-			&Profile{Name: "base", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base", ExtsPath: "./base", Extensions: []string{"some.very.real.ext.id"}},
 			false,
 			false,
 		},
@@ -56,7 +59,7 @@ profiles:
 			multipleProfilesBody,
 			"base2",
 
-			&Profile{Name: "base2", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base2", ExtsPath: "./base2", Extensions: []string{"some.very.real.ext.id"}},
 			false,
 			false,
 		},
@@ -114,7 +117,7 @@ func Test_GetProfile(t *testing.T) {
 			false,
 			"base",
 
-			&Profile{Name: "base", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base", ExtsPath: "./base", Extensions: []string{"some.very.real.ext.id"}},
 			nil,
 		},
 		{
@@ -124,7 +127,7 @@ func Test_GetProfile(t *testing.T) {
 			false,
 			"base",
 
-			&Profile{Name: "base", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base", ExtsPath: "./base", Extensions: []string{"some.very.real.ext.id"}},
 			nil,
 		},
 		{
@@ -134,7 +137,7 @@ func Test_GetProfile(t *testing.T) {
 			false,
 			"",
 
-			&Profile{Name: "base", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base", ExtsPath: "./base", Extensions: []string{"some.very.real.ext.id"}},
 			nil,
 		},
 		{
@@ -205,7 +208,6 @@ func Test_GetProfile(t *testing.T) {
 }
 
 func Test_SetConfigPath(t *testing.T) {
-	_configPath = "./code-profiles.yml"
 	t.Run("initial config name is set corretly", func(t *testing.T) {
 		assert.Equal(t, "./code-profiles.yml", _configPath)
 	})
@@ -221,6 +223,8 @@ func Test_SetConfigPath(t *testing.T) {
 	t.Run("setting the config path to an empty value doesn't do anything", func(t *testing.T) {
 		assert.Nil(t, _instance)
 		instance()
+		assert.NotNil(t, _instance)
+
 		SetConfigPath("")
 		assert.NotNil(t, _instance)
 		assert.Equal(t, "./code-profiles.yml", _configPath)
@@ -228,7 +232,7 @@ func Test_SetConfigPath(t *testing.T) {
 }
 
 func Test_getProfileByName(t *testing.T) {
-	for _, tr := range testRuns {
+	for _, tr := range sharedTestRuns {
 		t.Run(tr.testName, func(t *testing.T) {
 			os.Remove("code-profiles.yml")
 			_configPath = "./code-profiles.yml"
@@ -255,7 +259,7 @@ func Test_getProfileByName(t *testing.T) {
 }
 
 func Test_getProfileFromFile(t *testing.T) {
-	for _, tr := range testRuns {
+	for _, tr := range sharedTestRuns {
 		t.Run(tr.testName, func(t *testing.T) {
 			os.Remove("code-profiles.yml")
 			os.ReadDir(".code-profile")
