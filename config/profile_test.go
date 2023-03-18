@@ -17,22 +17,22 @@ func Test_Path(t *testing.T) {
 	}{
 		{
 			"with simple profile path",
-			Profile{ProfilePath: "./test"},
+			Profile{ExtsPath: "./test"},
 			"./test",
 		},
 		{
 			"with simple path starting with ~",
-			Profile{ProfilePath: "~"},
+			Profile{ExtsPath: "~"},
 			"home_dir",
 		},
 		{
 			"with more complex path starting with ~",
-			Profile{ProfilePath: "~/some-dir"},
+			Profile{ExtsPath: "~/some-dir"},
 			"home_dir/some-dir",
 		},
 		{
 			"with path containing a ~",
-			Profile{ProfilePath: "./~"},
+			Profile{ExtsPath: "./~"},
 			"./~",
 		},
 	}

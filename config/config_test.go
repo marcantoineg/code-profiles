@@ -50,7 +50,7 @@ profiles:
 			baseProfileBody,
 			"base",
 
-			&Profile{Name: "base", ProfilePath: "./base", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base", ExtsPath: "./base", Extensions: []string{"some.very.real.ext.id"}},
 			false,
 			false,
 		},
@@ -59,7 +59,7 @@ profiles:
 			multipleProfilesBody,
 			"base2",
 
-			&Profile{Name: "base2", ProfilePath: "./base2", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base2", ExtsPath: "./base2", Extensions: []string{"some.very.real.ext.id"}},
 			false,
 			false,
 		},
@@ -117,7 +117,7 @@ func Test_GetProfile(t *testing.T) {
 			false,
 			"base",
 
-			&Profile{Name: "base", ProfilePath: "./base", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base", ExtsPath: "./base", Extensions: []string{"some.very.real.ext.id"}},
 			nil,
 		},
 		{
@@ -127,7 +127,7 @@ func Test_GetProfile(t *testing.T) {
 			false,
 			"base",
 
-			&Profile{Name: "base", ProfilePath: "./base", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base", ExtsPath: "./base", Extensions: []string{"some.very.real.ext.id"}},
 			nil,
 		},
 		{
@@ -137,7 +137,7 @@ func Test_GetProfile(t *testing.T) {
 			false,
 			"",
 
-			&Profile{Name: "base", ProfilePath: "./base", Extensions: []string{"some.very.real.ext.id"}},
+			&Profile{Name: "base", ExtsPath: "./base", Extensions: []string{"some.very.real.ext.id"}},
 			nil,
 		},
 		{
