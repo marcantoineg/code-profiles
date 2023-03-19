@@ -28,14 +28,14 @@ profiles:
       - k--kato.intellij-idea-keybindings
 
   - name: go
-    profile-path: "~/.vscode/profiles/go"
+    exts-install-path: "~/.vscode/profiles/go"
     depends-on:
       - *base
     extensions:
       - golang.go
 
   - name: elixir
-    profile-path: "~/.vscode/profiles/elixir"
+    exts-install-path: "~/.vscode/profiles/elixir"
     depends-on:
       - *base
     extensions:
@@ -53,7 +53,7 @@ profiles:
       - mrorz.language-gettext
 
   - name: jvm
-    profile-path: "~/.vscode/profiles/jvm"
+    exts-install-path: "~/.vscode/profiles/jvm"
     depends-on:
       - *base
     extensions:
@@ -71,7 +71,7 @@ profiles:
       - lightbend.vscode-sbt-scala
 
   - name: ruby
-    profile-path: "~/.vscode/profiles/ruby"
+    exts-install-path: "~/.vscode/profiles/ruby"
     depends-on:
       - *base
     extensions:
@@ -80,7 +80,7 @@ profiles:
       - wingrunr21.vscode-ruby
 
   - name: python
-    profile-path: "~/.vscode/profiles/python"
+    exts-install-path: "~/.vscode/profiles/python"
     depends-on:
       - *base
     extensions:
@@ -91,7 +91,7 @@ profiles:
       - tushortz.python-extended-snippets
 
   - name: cpp
-    profile-path: "~/.vscode/profiles/cpp"
+    exts-install-path: "~/.vscode/profiles/cpp"
     depends-on:
       - *base
     extensions:
@@ -101,13 +101,13 @@ profiles:
       - ms-vscode.makefile-tools
 
   - name: rust
-    profile-path: "~/.vscode/profiles/rust"
+    exts-install-path: "~/.vscode/profiles/rust"
     depends-on:
       - *base
     extensions:
       - rust-lang.rust-analyzer
 
   - name: typescript
-    profile-path: "~/.vscode/profiles/typescript"
+    exts-install-path: "~/.vscode/profiles/typescript"
     extensions:
     - ms-vscode.vscode-typescript-next

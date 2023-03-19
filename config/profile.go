@@ -9,15 +9,15 @@ import (
 )
 
 type Profile struct {
-	Name       string     `yaml:"name"`
-	Extensions []string   `yaml:"extensions,flow"`
-	DependsOn  [][]string `yaml:"depends-on,flow"`
-	ExtsPath   string     `yaml:"profile-path"`
+	Name            string     `yaml:"name"`
+	Extensions      []string   `yaml:"extensions,flow"`
+	DependsOn       [][]string `yaml:"depends-on,flow"`
+	ExtsInstallPath string     `yaml:"exts-install-path"`
 }
 
 // Path returns the absolute path of the profile.
 func (p Profile) Path() string {
-	return fileutil.ReplaceTilde(p.ExtsPath)
+	return fileutil.ReplaceTilde(p.ExtsInstallPath)
 }
 
 // GetProfile returns either the named profile or loads the .code-profile value & tries to return this profile.
