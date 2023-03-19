@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  release-code-profiles:
+    name: release code-profiles
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        goos: [darwin, linux]
+        goarch: [arm, arm64, amd64]
+    
+    steps:
+    - uses: actions/checkout@v3
+    - uses: wangyoucao577/go-release-action@v1.36
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        goversion: 1.18
+        goos: ${{ matrix.goos }}
+        goarch: ${{ matrix.goarch }}
