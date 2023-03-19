@@ -18,7 +18,7 @@ func Execute() {
 	var rootCmd = &cobra.Command{Use: "code-profiles"}
 
 	openCmd.Flags().StringVarP(&configPathFlag, "config-path", "c", "./code-profiles.yml", "Path to code-profiles config")
-	openCmd.Flags().BoolVarP(&installFlag, "install", "i", false, "should install extensions before opening vscode")
+	openCmd.Flags().BoolVarP(&installFlag, "install", "i", false, "should install extensions before opening VSCode")
 	openCmd.Flags().BoolVarP(&verboseFlag, "verbose", "v", false, "prints additional logs")
 
 	installCmd.Flags().StringVarP(&configPathFlag, "config-path", "c", "./code-profiles.yml", "Path to code-profiles config")
