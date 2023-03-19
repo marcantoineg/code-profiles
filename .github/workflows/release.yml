@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         goos: [darwin, linux]
-        goarch: [arm, arm64, amd64]
+        goarch: [arm64, amd64]
     
     steps:
     - uses: actions/checkout@v3
